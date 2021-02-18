@@ -6,14 +6,26 @@ import Foundation
 // Casters cast, Fighters melee.
 
 protocol Casts {
+    var name: String {get}
     func castSpell()
 }
 
 protocol Fights {
+    var name: String {get}
     func melee()
 }
 
+extension Casts {
+    func castSpell() {
+        print("\(name) Attacks with Magic!")
+    }
+}
 
+extension Fights {
+    func melee() {
+        print("\(name) Attacks with Sword!")
+    }
+}
 // Player defines the default traits shared by all classes
 
 class Player {
@@ -39,10 +51,6 @@ class Fighter: Player, Fights {
         
         hitPoints = 8
     }
-    
-    func melee() {
-        print("\(name) Attacks with Sword!")
-    }
 }
 
 
@@ -53,10 +61,6 @@ class Wizard: Player, Casts {
         super.init(name: name)
         
         hitPoints = 4
-    }
-    
-    func castSpell() {
-        print("\(name) Casts spell")
     }
 }
 
@@ -69,11 +73,6 @@ class Priest: Player, Casts {
         
         hitPoints = 6
     }
-    
-    func castSpell() {
-        print("\(name) Casts spell")
-    }
-    
 }
 
 
@@ -84,14 +83,6 @@ class Elf: Player, Fights, Casts {
         super.init(name: name)
         
         hitPoints = 6
-    }
-    
-    func castSpell() {
-        print("\(name) Casts spell")
-    }
-    
-    func melee() {
-        print("\(name) Attacks with Sword!")
     }
 }
 
