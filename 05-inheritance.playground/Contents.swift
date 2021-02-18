@@ -75,7 +75,9 @@ class Priest: Player, Casts {
         
         hitPoints = 6
     }
-    
+    func castSpell() {
+        print("\(name) heals the party!")
+    }
 }
 
 
