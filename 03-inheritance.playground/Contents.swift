@@ -2,6 +2,14 @@
 
 import Foundation
 
+protocol Casts {
+    func castSpell()
+}
+
+protocol Fights {
+    func melee()
+}
+
 class Player {
     var name: String
     var hitPoints: Int
@@ -14,6 +22,14 @@ class Player {
     func adventure() {
         print("\(name) goes adventuring!")
     }
+    
+    func melee() {
+        print("Attacks with Sword!")
+    }
+    
+    func castSpell() {
+        print("Make Some Magic!")
+    }
 }
 
 class Fighter: Player {
@@ -24,17 +40,12 @@ class Fighter: Player {
         hitPoints = 8
     }
     
-    func melee() {
-        print("Attacks with Sword!")
-    }
 }
 
 // Spell casters cast spells
 
 class Spellcaster: Player {
-    func castSpell() {
-        print("Do magic stuff")
-    }
+}
                                                                       
 class Wizard: Spellcaster {
     
@@ -54,7 +65,6 @@ class Priest: Spellcaster {
     }
     
 }
-
 
 
 // Our game would be more fun with an Elf!
@@ -101,8 +111,8 @@ var frank = Fighter(name: "Frank")
 frank.melee()
 
 var elrond = Elf(name: "Elrond")
-// ????
-
+elrond.castSpell()
+elrond.melee()
 
 // - Challenge: 
 
