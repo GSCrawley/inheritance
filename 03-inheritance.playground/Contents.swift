@@ -35,8 +35,7 @@ class Spellcaster: Player {
     func castSpell() {
         print("Do magic stuff")
     }
-}
-
+                                                                      
 class Wizard: Spellcaster {
     
     override init(name: String) {
