@@ -55,6 +55,10 @@ class Fighter: Player, Fights {
         
         hitPoints = 8
     }
+    
+    func melee() {
+        print("\(name) attacks, yelling \(battleCry)!!!")
+    }
 }
 
 
@@ -112,8 +116,8 @@ var elrond = Elf(name: "Elrond")
 elrond.castSpell()
 elrond.melee()
 
-var george = Fighter(name: "George", battleCry: "Arrr!")
-george.melee()
+var badbill = Fighter(name: "Bad Bill", battleCry: "Diiiiieeee!")
+badbill.melee()
 
 // Now that the fighter has a battle cry they should use it when they attack.
 

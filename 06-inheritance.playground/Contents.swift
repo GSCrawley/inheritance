@@ -45,8 +45,11 @@ class Player {
 
 
 class Fighter: Player, Fights {
+    var battleCry: String
     
-    override init(name: String) {
+    init(name: String, battleCry: String = "") {
+        self.battleCry = battleCry
+
         super.init(name: name)
         
         hitPoints = 8
@@ -107,6 +110,9 @@ frank.melee()
 var elrond = Elf(name: "Elrond")
 elrond.castSpell()
 elrond.melee()
+
+var badbill = Fighter(name: "Bad Bill", battleCry: "Huzzah!")
+badbill.melee()
 
 // This is working really good so far. We need to add some detail. Fighters should have
 // a battle cry.
